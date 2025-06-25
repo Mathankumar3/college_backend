@@ -10,9 +10,17 @@ import jobRoutes from "./routes/job.js";
 import interviewRoutes from "./routes/interview.js";
 import placementDriveRoutes from "./routes/placementDrive.js";
 import academicRecordRoutes from "./routes/academicRecord.js";
+import cors from "cors"; // Add this import
 
 dotenv.config();
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Allow requests from your frontend
+    credentials: true, // If you use cookies or auth headers
+  })
+);
 
 app.use(express.json());
 connectDB();
