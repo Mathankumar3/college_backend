@@ -15,12 +15,13 @@ import cors from "cors"; // Add this import
 dotenv.config();
 const app = express();
 
-app.use(
-  cors({
-    origin: "http://localhost:5173", // Allow requests from your frontend
-    credentials: true, // If you use cookies or auth headers
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173", // Allow requests from your frontend
+//     credentials: true, // If you use cookies or auth headers
+//   })
+// );
+app.use(cors());
 
 app.use(express.json());
 connectDB();
